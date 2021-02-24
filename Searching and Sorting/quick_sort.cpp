@@ -7,7 +7,7 @@ int partition(int* arr, int l, int r){
     int pivot = r, i = l, j = l+1;
     while(j<=r){
         if(arr[j]<=arr[pivot]){
-            if(arr[i]<arr[pivot]) i++;
+            if(arr[i]<=arr[pivot]) i++;
             int temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
@@ -37,6 +37,7 @@ int main(){
     loop(i,0,n){
         cin>>arr[i];
     }
+    random_shuffle(arr,arr+n);
     quick_sort(arr, 0, n-1);
     loop(i,0,n){
         cout<<arr[i]<<" ";
